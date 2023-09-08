@@ -1,0 +1,45 @@
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 0fr 1fr 0fr;
+    /* le 1 fr force le main à prendre toute l place */
+}
+
+header,
+footer {
+    background-color: lightseagreen;
+}
+
+.conteneur {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.erreur,
+.validation {
+    padding: 5px;
+    margin: 5px;
+}
+
+.erreur {
+    background-color: #ff0000;
+}
+
+.validation {
+    background-color: #669933;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+}
+
+label{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}

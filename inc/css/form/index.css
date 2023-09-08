@@ -1,0 +1,14 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+}
+
+input, textarea{
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+textarea{
+    resize: none;
+}

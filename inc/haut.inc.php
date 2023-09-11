@@ -13,13 +13,30 @@
 <body>
     <header>       
             <nav class="topnav" id="myTopnav">
-                <a href="" title="Mon site">MonSite.com</a>
+                <?php if (userIsAdmin()) {
+                    echo '<a href="' . RACINE_SITE . 'admin/gestion_membre.php">Gestion des membres</a>';
+                    echo '<a href="' . RACINE_SITE . 'admin/gestion_commande.php">Gestion des commandes</a>';
+                    echo '<a href="' . RACINE_SITE . 'admin/gestion_boutique.php">Gestion de la boutique</a>';
+                }
+                if ((userIsConnected())) {
+                    echo '<a href="' . RACINE_SITE . 'profil.php">Voir votre profil</a>';
+                    echo '<a href="' . RACINE_SITE . 'boutique.php">Accès à la boutique</a>';
+                    echo '<a href="' . RACINE_SITE . 'panier.php">Voir votre panier</a>';
+                    echo '<a href="' . RACINE_SITE . 'connexion.php?action=deconnexion">Se déconnecter</a>';
+                }else{
+                    echo '<a href="' . RACINE_SITE . 'inscription.php">Inscription</a>';
+                    echo '<a href="' . RACINE_SITE . 'connexion.php">Connexion</a>';
+                    echo '<a href="' . RACINE_SITE . 'boutique.php">Accès à la boutique</a>';
+                    echo '<a href="' . RACINE_SITE . 'panier.php">Voir votre panier</a>';
+                }
+                ?>
+                <!-- <a href="" title="Mon site">MonSite.com</a>
                 <a href="<?php echo RACINE_SITE ?>inscription.php">Inscriptions</a>
                 <a href="<?php echo RACINE_SITE ?>connexion.php">Connexion</a>
                 <a href="<?php echo RACINE_SITE ?>boutique.php">Boutique</a>
                 <a href="<?php echo RACINE_SITE ?>panier.php">Panier</a>
                 <a href="javascript:void(0);" class="icon" onclick="toogleNav()">
-                    <i class="fa fa-bars"></i></a>
+                    <i class="fa fa-bars"></i></a> -->
             </nav>
     </header>
     <section>

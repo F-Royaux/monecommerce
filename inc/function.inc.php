@@ -32,3 +32,15 @@ function debug($var, $mode = 1)
     }
     echo '</div>';
 }
+
+//utilisateur connecté
+function userIsConnected(){
+    if (!isset($_SESSION['membre'])) return false;
+    else return true;
+}
+
+// utilisateur est connecté et is admin
+function userIsAdmin(){
+    if (userIsConnected() && $_SESSION['membre']['statut'] == 1) return true;
+    else return false;
+}
